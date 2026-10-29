@@ -449,7 +449,7 @@ body {
 
   /* Adjust content position for small phones */
   .hero-content {
-    top: 55px; /* Adjust this value independently */
+    top: 40px; /* Adjust this value independently */
   }
 
   .hero-subtitle {
