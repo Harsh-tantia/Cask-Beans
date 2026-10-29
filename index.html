@@ -29,7 +29,7 @@
         <nav class="navigation">
           <a href="#home">Home</a>
           <a href="#coffee">Coffee</a>
-          <a href="#bakery">Bakery</a>
+          <a href="#Beans">Beans</a>
           <a href="#shop">Shop</a>
           <a href="#about">About</a>
         </nav>
@@ -81,15 +81,57 @@
         </p>
 
         <a href="#shop" class="hero-button">
-          Explore Our Coffee
+          Explore Our Products
         </a>
 
       </div>
     </section>
 
   </div>
+<!-- Choose Your Craving Popup -->
+<div class="craving-overlay" id="cravingPopup" aria-hidden="true">
 
+  <div class="craving-modal" role="dialog"
+       aria-modal="true" aria-label="Choose your craving">
+
+    <button class="craving-close" id="cravingClose"
+            aria-label="Close popup">&times;</button>
+
+    <p class="craving-eyebrow">A LITTLE SOMETHING FOR YOU</p>
+    <h2>Choose your <span>craving.</span></h2>
+    <p class="craving-subtitle">What feels right today?</p>
+
+    <div class="craving-grid">
+
+      <a href="#coffee" class="craving-item"
+         aria-label="Explore coffee">
+        <img src="./assets/Cappuccino.png" alt="Coffee">
+      </a>
+
+      <a href="#matcha" class="craving-item"
+         aria-label="Explore matcha">
+        <img src="./assets/matcha.png" alt="Matcha">
+      </a>
+
+      <a href="#beans" class="craving-item"
+         aria-label="Explore coffee beans">
+        <img src="./assets/beans.png" alt="Coffee beans">
+      </a>
+
+      <a href="#desserts" class="craving-item"
+         aria-label="Explore desserts">
+        <img src="./assets/dessert.png" alt="Dessert">
+      </a>
+
+    </div>
+
+    <p class="craving-footer">A GOOD DAY STARTS WITH A LITTLE TREAT</p>
+
+  </div>
+</div>
   <script src="./javacript/script.js"></script>
-
+<script>
+  
+</script>
 </body>
 </html>
