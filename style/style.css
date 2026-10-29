@@ -264,11 +264,7 @@ body {
   }
 
   .cup-animation {
-    width: clamp(110px, 35vw, 175px);
-    left: 66%;
-    top: 149%;
-    transform: translate(-50%, -50%);
-    transform-origin: center;
+    display: none;
   }
 }
 
@@ -298,9 +294,4 @@ body {
     font-size: 11px;
   }
 
-  .cup-animation {
-    width: 160px;
-    left: 65%;
-    top: 145%;
-  }
 }
