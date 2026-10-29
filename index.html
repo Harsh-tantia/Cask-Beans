@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,9 +6,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CASK & BEANS</title>
+
   <link rel="stylesheet" href="style/style.css">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@500;600;700&display=swap"
     rel="stylesheet">
@@ -15,11 +19,11 @@
 
 <body>
 
-
   <div class="hero-wrapper">
 
     <header class="coffee-header">
       <div class="header-inner">
+
         <div class="logo">CASK & BEANS</div>
 
         <nav class="navigation">
@@ -30,15 +34,23 @@
           <a href="#about">About</a>
         </nav>
 
-
         <div class="container">
-          <input type="text" class="search-input" placeholder="Search..." />
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search..."
+            aria-label="Search">
 
-          <button class="search-button" aria-label="Search">
+          <button
+            type="button"
+            class="search-button"
+            aria-label="Open search">
+
             <svg viewBox="0 0 24 24">
               <circle cx="10.8" cy="10.8" r="6.5"></circle>
               <path d="M16 16l4.5 4.5"></path>
             </svg>
+
           </button>
         </div>
 
@@ -49,21 +61,35 @@
       <div class="hero-content">
 
         <div class="cup-animation">
-          <img src="./assets/cup.png" alt="Coffee cup" class="hero-cup">
+          <img
+            src="./assets/cup.png"
+            alt="Coffee cup"
+            class="hero-cup">
         </div>
 
-        <p class="hero-subtitle">WELCOME TO OUR COFFEE HOUSE</p>
-        <h1>Start Your Day<br>With Coffee</h1>
+        <p class="hero-subtitle">
+          WELCOME TO OUR COFFEE HOUSE
+        </p>
+
+        <h1>
+          Start Your Day<br>
+          With Coffee
+        </h1>
+
         <p class="hero-description">
           Discover the perfect blend of rich flavours and unforgettable moments.
         </p>
-        <a href="#shop" class="hero-button">Explore Our Coffee</a>
+
+        <a href="#shop" class="hero-button">
+          Explore Our Coffee
+        </a>
+
       </div>
     </section>
 
   </div>
 
   <script src="./javacript/script.js"></script>
-</body>
 
+</body>
 </html>
