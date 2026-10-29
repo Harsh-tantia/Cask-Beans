@@ -265,6 +265,11 @@ body {
    TABLET & MOBILE
 ========================= */
 
+
+/* =========================
+   MOBILE VIEW
+========================= */
+
 @media (max-width: 600px) {
 
   .hero-wrapper {
@@ -273,6 +278,7 @@ body {
     background: url("../assets/first-bannermb.png") center center / cover no-repeat;
   }
 
+  /* Header */
   .coffee-header {
     height: auto;
     min-height: 85px;
@@ -288,6 +294,7 @@ body {
     font-size: 21px;
   }
 
+  /* Navigation */
   .navigation {
     position: static;
     transform: none;
@@ -303,10 +310,11 @@ body {
     font-size: 9px;
   }
 
-  /* Keep the search button compact */
+  /* Search button */
   .container {
     width: 30px;
     height: 30px;
+    flex-shrink: 0;
   }
 
   .search-button {
@@ -322,31 +330,36 @@ body {
   .search-input {
     width: 30px;
     height: 30px;
-    padding-left: 12px;
-    padding-right: 38px;
+    padding: 0 38px 0 12px;
     font-size: 13px;
   }
 
-  /* Shorter search bar on mobile */
+  /* Short search bar */
   .container:focus-within .search-input {
     width: min(200px, calc(100vw - 40px));
   }
 
-  /* Move hero content down */
+  /* Hero section */
   .hero {
+    width: 100%;
     min-height: calc(100dvh - 130px);
-    padding: 90px 20px 60px;
+    padding: 40px 20px 60px;
+    display: flex;
     align-items: flex-start;
+    overflow: hidden;
   }
 
+  /* Move all hero content together */
   .hero-content {
     width: 100%;
     max-width: 100%;
     position: relative;
+    top: 50px; /* Increase to move down; decrease to move up */
     bottom: auto;
-    transform: translateY(10px);
+    transform: none;
   }
 
+  /* Subtitle */
   .hero-subtitle {
     font-size: 9px;
     letter-spacing: 2px;
@@ -354,12 +367,14 @@ body {
     margin-bottom: 18px;
   }
 
+  /* Main heading */
   .hero h1 {
     font-size: clamp(42px, 11vw, 56px);
     line-height: 1;
     margin-bottom: 20px;
   }
 
+  /* Description */
   .hero-description {
     max-width: 90%;
     font-size: 12px;
@@ -367,16 +382,19 @@ body {
     margin-bottom: 24px;
   }
 
+  /* CTA button */
   .hero-button {
     min-height: 40px;
     padding: 12px 20px;
     font-size: 10px;
   }
 
+  /* Hide cup on mobile */
   .cup-animation {
     display: none;
   }
 }
+
 
 /* =========================
    SMALL PHONES
@@ -384,6 +402,7 @@ body {
 
 @media (max-width: 380px) {
 
+  /* Header */
   .coffee-header {
     padding: 15px 14px;
   }
@@ -396,7 +415,7 @@ body {
     font-size: 8px;
   }
 
-  /* Even more compact search on small screens */
+  /* Compact search */
   .container {
     width: 28px;
     height: 28px;
@@ -413,29 +432,48 @@ body {
   }
 
   .search-input {
-    height: 28px;
     width: 28px;
+    height: 28px;
+    padding: 0 36px 0 10px;
   }
 
   .container:focus-within .search-input {
     width: min(175px, calc(100vw - 32px));
   }
 
+  /* Hero section */
   .hero {
-    padding: 85px 16px 50px;
+    min-height: calc(100dvh - 130px);
+    padding: 35px 16px 50px;
   }
 
+  /* Adjust content position for small phones */
   .hero-content {
-    transform: translateY(10px);
+    top: 55px; /* Adjust this value independently */
+  }
+
+  .hero-subtitle {
+    font-size: 8px;
+    letter-spacing: 1.6px;
+    margin-bottom: 16px;
   }
 
   .hero h1 {
     font-size: 42px;
+    line-height: 1;
+    margin-bottom: 18px;
   }
 
   .hero-description {
     max-width: 100%;
     font-size: 11px;
+    line-height: 1.8;
+    margin-bottom: 22px;
+  }
+
+  .hero-button {
+    min-height: 38px;
+    padding: 11px 17px;
   }
 
   .cup-animation {
