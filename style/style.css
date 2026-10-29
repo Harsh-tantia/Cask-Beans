@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css?family=Inconsolata:700');
 
 * {
@@ -13,6 +14,7 @@ html {
 body {
   width: 100%;
   min-height: 100%;
+  overflow-x: hidden;
 }
 
 .hero-wrapper {
@@ -21,6 +23,10 @@ body {
   min-height: 100dvh;
   background: url("../assets/first-banner.png") center center / cover no-repeat;
 }
+
+/* =========================
+   HEADER
+========================= */
 
 .coffee-header {
   width: 100%;
@@ -77,6 +83,21 @@ body {
   color: #d6b58c;
 }
 
+/* =========================
+   SEARCH BAR
+========================= */
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  z-index: 10;
+}
+
 .search-button {
   width: 34px;
   height: 34px;
@@ -90,7 +111,7 @@ body {
   flex-shrink: 0;
   z-index: 6;
   position: relative;
-  transition: background 0.5s ease;
+  transition: background 0.4s ease;
 }
 
 .search-button svg {
@@ -99,47 +120,62 @@ body {
   stroke: #292929;
   stroke-width: 2.5;
   fill: none;
-  transition: transform 0.5s ease, stroke 0.5s ease;
+  transition: transform 0.4s ease, stroke 0.4s ease;
 }
 
-/* Search input animation */
 .search-input {
+  position: absolute;
+  top: 0;
+  right: 0;
   width: 34px;
   height: 34px;
-  padding: 0 40px 0 14px;
+  padding: 0 42px 0 14px;
   border: none;
   outline: none;
   border-radius: 30px;
   background: #f8f7f4;
   color: #292929;
+  font-family: 'Inconsolata', monospace;
+  font-size: 14px;
   opacity: 0;
-  position: absolute;
-  right: 0;
   z-index: 5;
-  transition: width 0.6s ease, opacity 0.4s ease;
+  pointer-events: none;
+  transition:
+    width 0.45s ease,
+    opacity 0.3s ease;
 }
 
-.search-input:focus {
-  width: 280px;
+.search-input::placeholder {
+  color: #777;
+}
+
+/* Open search */
+
+.container:focus-within .search-input {
+  width: min(280px, calc(100vw - 40px));
   opacity: 1;
+  pointer-events: auto;
 }
 
-/* Button changes when search opens */
-.search-container:focus-within .search-button {
+.container:focus-within .search-button {
   background: #292929;
 }
 
-.search-container:focus-within .search-button svg {
+.container:focus-within .search-button svg {
   stroke: #fff;
   transform: rotate(45deg);
 }
+
+/* =========================
+   HERO SECTION
+========================= */
 
 .hero {
   width: 100%;
   min-height: 600px;
   padding: 70px 12%;
   background: transparent;
-  color: #ffffff;
+  color: #fff;
   display: flex;
   align-items: center;
   position: relative;
@@ -149,6 +185,8 @@ body {
 .hero-content {
   width: 100%;
   max-width: 600px;
+  position: relative;
+  z-index: 3;
 }
 
 .hero-subtitle {
@@ -184,7 +222,7 @@ body {
   min-width: 77px;
   min-height: 35px;
   padding: 7px 17px;
-  background: #ffffff;
+  background: #fff;
   color: #252323;
   border: none;
   border-radius: 20px;
@@ -200,11 +238,15 @@ body {
   background: #e9e4df;
 }
 
+/* =========================
+   COFFEE CUP
+========================= */
+
 .cup-animation {
   position: absolute;
   width: clamp(300px, 36vw, 500px);
-  top: 60%;
-  left: 76%;
+  top: 69%;
+  left: 162%;
   transform: translate(-50%, -50%);
   transform-origin: 50% -100px;
   z-index: 2;
@@ -219,12 +261,15 @@ body {
   filter: drop-shadow(0 12px 12px rgba(0, 0, 0, 0.3));
 }
 
+/* =========================
+   TABLET & MOBILE
+========================= */
+
 @media (max-width: 600px) {
+
   .hero-wrapper {
     min-height: 100vh;
     min-height: 100dvh;
-    background-size: cover;
-    background-position: 60% center;
     background: url("../assets/first-bannermb.png") center center / cover no-repeat;
   }
 
@@ -258,25 +303,48 @@ body {
     font-size: 9px;
   }
 
+  /* Keep the search button compact */
+  .container {
+    width: 30px;
+    height: 30px;
+  }
+
   .search-button {
     width: 30px;
     height: 30px;
   }
 
-  .search-input {
-    width: 25px;
+  .search-button svg {
+    width: 16px;
+    height: 16px;
   }
 
+  .search-input {
+    width: 30px;
+    height: 30px;
+    padding-left: 12px;
+    padding-right: 38px;
+    font-size: 13px;
+  }
+
+  /* Shorter search bar on mobile */
+  .container:focus-within .search-input {
+    width: min(200px, calc(100vw - 40px));
+  }
+
+  /* Move hero content down */
   .hero {
     min-height: calc(100dvh - 130px);
-    padding: 50px 20px 60px;
-    align-items: center;
+    padding: 90px 20px 60px;
+    align-items: flex-start;
   }
 
   .hero-content {
+    width: 100%;
     max-width: 100%;
-    bottom: 50vh;
-    position: absolute;
+    position: relative;
+    bottom: auto;
+    transform: translateY(10px);
   }
 
   .hero-subtitle {
@@ -310,7 +378,12 @@ body {
   }
 }
 
+/* =========================
+   SMALL PHONES
+========================= */
+
 @media (max-width: 380px) {
+
   .coffee-header {
     padding: 15px 14px;
   }
@@ -323,8 +396,37 @@ body {
     font-size: 8px;
   }
 
+  /* Even more compact search on small screens */
+  .container {
+    width: 28px;
+    height: 28px;
+  }
+
+  .search-button {
+    width: 28px;
+    height: 28px;
+  }
+
+  .search-button svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .search-input {
+    height: 28px;
+    width: 28px;
+  }
+
+  .container:focus-within .search-input {
+    width: min(175px, calc(100vw - 32px));
+  }
+
   .hero {
-    padding: 40px 16px 50px;
+    padding: 85px 16px 50px;
+  }
+
+  .hero-content {
+    transform: translateY(10px);
   }
 
   .hero h1 {
