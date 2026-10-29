@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata:700');
+
 * {
   margin: 0;
   padding: 0;
@@ -133,29 +134,6 @@ body {
   transform: rotate(45deg);
 }
 
-/* 
-.search-button {
-  width: 34px;
-  height: 34px;
-  border: none;
-  border-radius: 50%;
-  background: #f8f7f4;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  flex-shrink: 0;
-  z-index: 2;
-}
-
-.search-button svg {
-  width: 17px;
-  height: 17px;
-  stroke: #292929;
-  stroke-width: 2.5;
-  fill: none;
-} */
-
 .hero {
   width: 100%;
   min-height: 600px;
@@ -240,6 +218,7 @@ body {
   object-fit: contain;
   filter: drop-shadow(0 12px 12px rgba(0, 0, 0, 0.3));
 }
+
 @media (max-width: 600px) {
   .hero-wrapper {
     min-height: 100vh;
@@ -284,6 +263,10 @@ body {
     height: 30px;
   }
 
+  .search-input {
+    width: 25px;
+  }
+
   .hero {
     min-height: calc(100dvh - 130px);
     padding: 50px 20px 60px;
@@ -292,7 +275,7 @@ body {
 
   .hero-content {
     max-width: 100%;
-    bottom: 40vh;
+    bottom: 50vh;
     position: absolute;
   }
 
