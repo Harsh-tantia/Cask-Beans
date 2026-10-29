@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:700');
 * {
   margin: 0;
   padding: 0;
@@ -86,6 +87,64 @@ body {
   justify-content: center;
   cursor: pointer;
   flex-shrink: 0;
+  z-index: 6;
+  position: relative;
+  transition: background 0.5s ease;
+}
+
+.search-button svg {
+  width: 17px;
+  height: 17px;
+  stroke: #292929;
+  stroke-width: 2.5;
+  fill: none;
+  transition: transform 0.5s ease, stroke 0.5s ease;
+}
+
+/* Search input animation */
+.search-input {
+  width: 34px;
+  height: 34px;
+  padding: 0 40px 0 14px;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  background: #f8f7f4;
+  color: #292929;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  z-index: 5;
+  transition: width 0.6s ease, opacity 0.4s ease;
+}
+
+.search-input:focus {
+  width: 280px;
+  opacity: 1;
+}
+
+/* Button changes when search opens */
+.search-container:focus-within .search-button {
+  background: #292929;
+}
+
+.search-container:focus-within .search-button svg {
+  stroke: #fff;
+  transform: rotate(45deg);
+}
+
+/* 
+.search-button {
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 50%;
+  background: #f8f7f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
   z-index: 2;
 }
 
@@ -95,7 +154,7 @@ body {
   stroke: #292929;
   stroke-width: 2.5;
   fill: none;
-}
+} */
 
 .hero {
   width: 100%;
@@ -233,7 +292,7 @@ body {
 
   .hero-content {
     max-width: 100%;
-    bottom: 35vh;
+    bottom: 40vh;
     position: absolute;
   }
 
@@ -294,4 +353,7 @@ body {
     font-size: 11px;
   }
 
+  .cup-animation {
+    display: none;
+  }
 }
