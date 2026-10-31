@@ -66,4 +66,4 @@ popupTimer = setInterval(function () {
   if (!cravingPopup.classList.contains("active")) {
     openCravingPopup();
   }
-}, 60000);
+}, 120000);
