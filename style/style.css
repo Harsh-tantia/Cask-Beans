@@ -273,10 +273,12 @@ body {
 @media (max-width: 600px) {
 
   .hero-wrapper {
-    min-height: 100vh;
-    min-height: 100dvh;
-    background: url("../assets/first-bannermb.png") center center / cover no-repeat;
-  }
+        height: 100svh;
+        background-image: url("../assets/first-bannermb.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
 
   /* Header */
   .coffee-header {
