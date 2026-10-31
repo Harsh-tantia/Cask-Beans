@@ -19,9 +19,11 @@ body {
 
 .hero-wrapper {
   width: 100%;
-  min-height: 100vh;
-  min-height: 100dvh;
-  background: url("../assets/first-banner.png") center center / cover no-repeat;
+    min-height: 100vh;
+    background-image: url("../assets/first-banner.png");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 /* =========================
@@ -273,9 +275,10 @@ body {
 @media (max-width: 600px) {
 
   .hero-wrapper {
-        height: 100svh;
+        height: 750px;
+        min-height: 750px;
         background-image: url("../assets/first-bannermb.png");
-        background-position: center;
+        background-position: center center;
         background-size: cover;
         background-repeat: no-repeat;
     }
